@@ -1,0 +1,21 @@
+version: "2"
+services:
+      
+  app:
+    container_name: myapp
+    links:
+     - "db"
+    image: iropat/my-connection:latest
+    ports:
+      - "5000:5000"
+ 
+
+  db:
+    image: mysql:5.7
+    container_name: mydb
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      
+
